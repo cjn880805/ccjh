@@ -1,0 +1,21 @@
+临时属性：
+apply/jisuei		击碎
+apply/mf			寻宝	
+apply/chuantou		穿透
+apply/chuantou_df	穿透伤害
+apply/all_skill		技能
+baobei				宝物，无法被击碎
+no_chuantou			无法被穿透
+no_duo				不可以被夺走
+apply/no_绝招		绝招无效
+apply/bo_superkill	无法被一击必杀
+apply/fantan		反弹伤害
+apply/hp_hueifu		HP每分钟自动恢复
+apply/sub_mp		使用绝招减少MP消耗（%）
+apply/反_绝招		反馈绝招效果
+apply/加_武功		增加武功伤害
+apply/群_武功		武功伤害对象变为群体
+
+宝山属性：
+mf/odds				寻宝几率
+mf/level			宝物等级

@@ -1,0 +1,105 @@
+xisuijing      洗髓经
+skybook        无字天书
+qiankun_xinfa  羊皮（乾坤大挪移心法）
+ls_book        独孤九剑剑谱
+kuihua         葵花宝典
+jinshe3       「金蛇秘芨」下册
+jinshe2       「金蛇秘芨」中册
+jinshe1        金蛇秘芨」上册
+book_iron      铁手掌
+book14_1       四十二章经一
+book14_2       四十二章经二
+book14_3       四十二章经三
+book14_4       四十二章经四
+book14_5       四十二章经五
+book14_6       四十二章经六
+book14_7       四十二章经七
+book14_8       四十二章经八
+bojuan         帛卷
+18niou         十八泥偶
+
+
+
+紫霞密芨	zixia_book	zixia_shengong	0-99
+
+十八木偶	18muou		force		60-99
+正气吟		zhengqi_book	zhengqijue	0-99		10000
+十八泥偶	18niou		force		30-59		(bug)
+天山折梅手法图上卷	zhemei_book1	zhemei_shou	0-49	10000
+天山折梅手法图下卷	zhemei_book2	zhemei_shou	100-149	100000
+昊天掌法谱	zhangfapu	haotian_zhang	0-80	10000
+玉女心经上册	yunvjing1	yunv_xinfa	0-60	30000
+玉女心经下册	yunvjing2	yunv_xinfa	0-100	65000
+玉女剑谱	yunv_swordb	yunv_swords	0-40	1000
+易筋经		yijinjing	yijinjing	0-200	100000
+「易经系辞篇」	yijing3		qimen_wuxing	75-100
+「易经杂卦篇」	yijing2		qimen_wuxing	50-75	
+「易经说卦篇」	yijing1		qimen_wuxing	25-50
+「易经序卦篇」	yijing0		qimen_wuxing	0-25
+旋风扫叶腿法	xuanfeng_book	xuanfeng_leg	30-99	1000
+洗髓经		xisuijing	whip,finger,hand,cuff,claw,strike	0-180 	读书大于100, 300000  少林寺达摩院二楼
+韦陀棍法 醉棍棍法 无常杖法 普渡杖法 伏魔剑法 达摩剑法 wuji3 0-99 10000
+龙爪功法 鹰爪功法 拈花指法 一指禅功 慈悲刀法 修罗刀法 wuji2 0-99 10000
+风云手手法 如来千叶手手法 大金刚拳法 罗汉拳法 般若掌法 散花掌法 wuji1 0-99 10000
+天山器法	throw_book	feixing_shu	0-99	1000
+华山剑谱2	sword_book2	huashan_sword	0-40	1000
+华山剑谱1	sword_book1	sword		0-30	1000
+一阳指诀	sun_book	sun_finger	0-99	1000
+掌法总谱	strike_book	strike		0-30	
+杖法通解	staff_book	staff		30-99	10000
+羊皮书		skin		sword		100-149	10000
+六脉神剑谱	six_book	six_finger	0-99	100000
+神龙八式手法	shoufa		shenlong_bashi	0-60	10000
+拳谱总诀	quanpu		unarmed		50-99	10000
+黄石谱		qinpu		wuyun_jianfa	0-80	100
+天羽奇剑剑谱	qijianpu	tianyu_qijian	50-150	100000
+羊皮		qiankun_xinfa	qiankun_danuoyi	0-250	100读书,max_mp>1500 九阳,同等force
+辟邪剑谱	pixie_sword_book	pixie_sword	0-100	10000
+招架入门	parry_book	parry		0-19	1
+密宗心经	mizong_book	mizong_xinfa	0-99	
+妙手空空入门秘籍	miaoshou	stealing	0-20	1000
+独孤九剑剑谱	ls_book		lonely_sword	75-300	100读书,50000经验
+天山六阳掌法图下册	liuyang_book2	liuyang_zhang	100-149	100000
+天山六阳掌法图上册	liuyang_book1	liuyang_zhang	10-49	100000
+六脉神剑谱	liumai_sword	liumai_shenjian	0-100
+论语		literateb4	literate	110-120	10
+千字文		lbook3		literate	80-99	1000
+百家姓		lbook2		literate	50-79	100
+三字经		lbook1		literate	20-49	10
+道德经「第八章」	laozi8	taoism		0-29	
+道德经「第二章」	laozi2	taoism		0-29
+道德经「第十八章」	laozi18	taoism		0-29
+道德经「第十六章」	laozi16	taoism		0-29
+道德经「第十三章」	laozi13	taoism		0-29
+道德经「第一章」	laozi1	taoism		0-29
+《葵花宝典》简体中文版	kuihua	pixie_jian	0-200	
+「九阴真经」下册	jiuyin2	jiuyin_baiguzhao	0-99	10000
+「九阴真经」上册	jiuyin1	force		100-199	100000
+「九阳真经」第四卷	jiuyang4	jiuyang_shengong	75-100	2000
+「九阳真经」第三卷	jiuyang3	jiuyang_shengong	50-75	1500
+「九阳真经」第二卷	jiuyang2	jiuyang_shengong	25-50	1000
+「九阳真经」第一卷	jiuyang1	jiuyang_shengong	0-25	500
+金雁图谱		jinyantu	jinyan_gong		0-60	10000
+「金蛇秘芨」下册	jinshe3		jinshe_zhang		0-200	
+「金蛇秘芨」中册	jinshe2		jinshe_zhui		0-200
+「金蛇秘芨」上册	jinshe1		jinshe_jian		0-200
+天涯寒月牌		hanyuepai	literate,unarmed	100-350	
+棋谱			hand_book	hand		0-29
+太极十三势		force_book	force		10-29
+『星宿毒经〖下册〗』	dujing_2	poison		50-99	50000
+『星宿毒经〖上册〗』	dujing_1	
+轻功篇		dodgebook	dodge	0-100	10000
+道德经「下卷」	daodejing_ii	taoism	0-99	1000
+道德经「上卷」	daodejing_i	taoism	0-49	
+道德经		daodejing	taoism	0-99	1000
+旧竹片		dodge		0-29
+石板		book_stone	finger,claw,strike,cuff,hand	0-29	
+薄绢		book_silk	force	0-29
+易筋经文学篇	book_paper	literate	10-19	
+铁手掌		book_iron	parry		0-29
+帛卷		bojuan		beiming_shengong	0-100
+胡家刀谱残篇	blade_book	blade		30-99	1000
+「洛书」	bagua		count		100-149	
+「河图」	bagua0		count		40-69
+一阳指法谱	zhifapu		sun_finger	0-150	150000
+

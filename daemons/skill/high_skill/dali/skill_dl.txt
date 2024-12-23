@@ -1,0 +1,21 @@
+大理现用技能：
+
+段家剑		duanjia_sword
+飞凤鞭法	feifeng_whip
+金玉拳		jinyu_quan
+枯荣禅功	kurong_changong
+枯荣神功	kurong_shengong
+六脉神剑	liumai_shenjian（正品）
+六脉之关冲	lm_guangchong
+六脉之商阳	lm_shangyang
+六脉之少冲	lm_shaochong
+六脉之少商	lm_shaoshang
+六脉之少泽	lm_shaoze
+六脉之中冲	lm_zhongchong
+轻蝶身法	qingdie_shengfa
+六脉神剑	six_finger（假）
+正品一阳指	sun_finger
+天龙神功	tianlong_shengong
+天南步法	tiannan_step
+五罗轻烟掌	wuluo_zhang
+一阳指		yiyang_zhi（假）

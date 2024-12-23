@@ -1,0 +1,1 @@
+(["teapot":(["brand":1,]),"wield_position":7,"unwield_msg":"$N将手中的$n反别身后。","apply":(["damage":31,]),"rigidity":13,"no_clean_up":1,"no_sell":1,"owner":"1010","wield_msg":"$N掣出一把$n握在手中。","value":1,"staticname":"青龙","skill_type":"sword","cumpower":11,"id":"tealeaf","item_make":1,"name":"青龙","base_name":"s_weapon_1010","material":"sapphine","unit":"把",])

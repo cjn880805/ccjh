@@ -1,0 +1,215 @@
+// Item.cpp: implementation of the CItem class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "Globle.h"
+#include "Item.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+CItem::CItem()
+{
+	m_lAmount = 1;
+}
+
+CItem::~CItem()
+{
+	
+}
+
+//分开成两份
+CItem * CItem::Split(LONG nAmount)
+{
+	CItem * t;
+	LONG nLeft = m_lAmount - nAmount;
+	
+	if(nAmount <=0 || nLeft <0 ) return 0;	//分不出来
+	if(nLeft == 0) return this;
+
+	set_amount(nLeft);
+	t = (CItem *)load_item(querystr("base_name"));
+	if(t) 
+	{
+		if(query("index"))
+			t->create(query("index"));
+		t->set_amount(nAmount);
+	}
+
+	return t;
+}
+
+//两个物品合并
+int CItem::Combine(CItem *obj)
+{
+	if(DIFFERSTR(obj->querystr("base_name"), querystr("base_name")) ) return 0;	//不是同类物品不能合并。
+	
+	m_lAmount += obj->Query_Amount();
+	DESTRUCT_OB(obj, "CItem::Combine");
+
+	return 1;
+}
+
+int CItem::Can_Use()
+{
+	return 0;
+}
+
+LONG CItem::Query(int nAttr)
+{
+	switch(nAttr)
+	{
+	case IS_ITEM: return 1;
+	case CAN_GET: 
+		{
+			if(_M.undefinedp("no_get"))
+				return 1;
+			return 0;
+		}
+	case CAN_USE: return Can_Use();
+	}
+
+	return CContainer::Query(nAttr);
+}
+
+int CItem::do_use(CChar * me, CContainer * target)
+{
+	return 0;
+}
+
+//行为
+int CItem::Do_Action(int nAct, CChar *me)
+{
+	if(! me)
+	{
+		if(! environment() || ! environment()->Query(IS_CHAR))
+			return 0;
+		me = (CChar *)environment();
+	}
+	
+	return CContainer::Do_Action(nAct, me);
+}
+
+LONG CItem::Query_Amount()
+{
+	return m_lAmount;
+}
+
+void CItem::set_amount(LONG nAmount)
+{
+	if( nAmount < 0 )
+	{
+		m_lAmount = 0;	//出错信息
+	}
+
+	if( nAmount == 0 ) 
+	{
+		m_lAmount = 0;
+		//毁灭自身
+		DESTRUCT_OB(this, "CItem::set_amount");
+		return;
+	}
+	else
+	{
+		m_lAmount = nAmount;
+		if(query("base_weight"))
+			set_weight( nAmount * query("base_weight") );
+		if(query("base_value"))
+			set("value", nAmount * query("base_value") );
+	}
+
+	UpdateMe();
+}
+
+LONG CItem::add_amount(LONG val)
+{
+	set_amount(m_lAmount + val);
+	return m_lAmount + val;
+}
+
+int CItem::do_look(CChar *me)
+{
+	char msg[255];
+	DTItemList * list;
+	POSITION p;
+	CContainer * item;
+
+	//1,先传描述
+	say(snprintf(msg, 255, "%s %s", Short(), Long()), me);
+
+    list = Get_ItemList();
+	p = list->GetHeadPosition();
+	if(list->GetCount() && ( DIFFERSTR(querystr("status"), "locked") || wizardp(me) ))
+	{
+		AddMenuItem("里面有：", "", me);
+		while(p)
+		{
+			item = list->GetNext(p);
+			AddMenuItem(item->name(), 
+			snprintf(msg, 80, "$0get %ld from $1", item->object_id()), me);
+		}			
+    }			
+
+    return 0;
+}
+
+LONG CItem::receive_damage(const char * szType, LONG nDamage)
+{
+	int val;
+
+	if( nDamage <= 0 ) return 0;
+	if( DIFFERSTR(szType, "dp")) return 0;
+	
+	val = query(szType) - nDamage;
+
+	if( val > 0 ) 
+		set(szType, val);
+	else
+	{
+		set(szType, 0l);
+		call_out(destruct_me, 1);
+	}	
+
+	return nDamage;
+}
+
+LONG CItem::receive_wound(const char * type, LONG damage)
+{
+	LONG val;
+	char eff_key[40];
+	
+	if( damage <= 0 ) return 0;
+	if( DIFFERSTR(type, "dp") ) return 0;
+
+	snprintf(eff_key, 40, "eff_%s", type);
+	
+	val = query(eff_key) - damage;
+
+	if( val > 0 ) set(eff_key, val);
+	else 
+	{
+		set(eff_key, 0l);
+		call_out(destruct_me, 1);
+	}
+    
+	if( query(type) > val ) set(type, val);
+	return damage;	
+}
+
+void CItem::destruct_me(CContainer * ob, LONG param1, LONG param2)
+{
+	const char * msg = ob->querystr("destruct_msg");
+	if(msg[0] && ob->environment()) 
+		tell_object(ob->environment(), msg);
+
+	DESTRUCT_OB(ob, "CItem::destruct_me");
+}
+
+//当移动到容器中时呼叫
+void CItem::init()
+{
+	set("weight",Query_Weight());
+	if(Query_Weight()<1000)
+		set_weight(1000);
+}

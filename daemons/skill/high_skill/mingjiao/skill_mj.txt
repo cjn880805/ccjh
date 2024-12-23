@@ -1,0 +1,23 @@
+明教现用技能：
+
+夺命银花	duoming_jinhua
+风雷刀		fenglei_dao
+寒冰绵掌	hanbing_mianzhang
+烈焰寒冰掌	hanbing_srtike
+猴拳		houquan
+九阳神功	jiuyang_shengong
+飘逸步法	piaoyibu
+乾坤大挪移	qiankun_danuoyi
+青蝙身法	qingfu_shenfa
+七伤拳		qishang_quan
+圣火令法	shenghuo_lingfa
+圣火神功	shenghuo_shengong
+圣火心法	shenghuo_xinfa
+石鼓打穴笔	shigu_bifa
+搜骨鹰爪功	sougu
+巫月刀法	wuyue_blade
+五韵七弦剑	wuyun_jianfa
+玄天神功	xuantian_shengong
+玄天无情指	xuantian_zhi
+轩辕箭		xuanyuan_arrow
+鹰爪手		yingzhua_shou
